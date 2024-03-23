@@ -29,6 +29,7 @@ header h1{
     line-height: 30px;
     text-align: center;
     margin: 0 64px 30px 64px;
+    animation: updown 1000ms;
 }
 header p{
     color: hsl(303, 10%, 53%);
@@ -37,6 +38,7 @@ header p{
     font-size: 14px;
     font-weight: 500;
     margin: 0 28px 0 28px;
+    animation: downup 1000ms;
 
 }
 /* star */
@@ -45,6 +47,8 @@ header p{
     flex-direction: column;
     align-items: center;
     margin-bottom: 30px;
+   
+    
 }
 .stars{
     background-color: hsl(300, 19%, 81%);
@@ -59,9 +63,12 @@ header p{
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    overflow: hidden;
+    animation: rightleft 1000ms;
 }
 .stars .fiveStars{
     min-width: 120px;
+    animation: leftright 2000ms;
 }
 .stars .text{
     min-width: 240px;
@@ -87,6 +94,10 @@ header p{
     font-size: 12px;
     display: grid;
     grid-template-columns: 1fr 10fr;
+    box-shadow: 12px 8px 15px   hsla(333, 70%, 52%, 0.505);
+     overflow: hidden;
+    animation: leftright  1000ms;
+   
 
 }
 
@@ -96,16 +107,20 @@ header p{
     margin-right: 20px;
     grid-column: 1/2;
     grid-row: 1/ 3;
+    box-shadow: 4px 4px 60px -2px hsl(333,80%,67%) ;
+    animation:updown 2400ms;
 
 }
 .card .name{
     font-weight: 700;
     grid-column: 2/3;
+    animation: leftright 2000ms;
 
 }
 .card .state{
     color: hsl(333,80%,67%);
     grid-column: 2/3;
+    animation: rightleft 2050ms;
 
 }
 .card p{
@@ -113,8 +128,10 @@ header p{
     line-height: 20px;
     grid-column:1/3;
     margin-top: 30px;
+    animation: downup 2100ms;
     
 }
+
 /* footer */
 .attribution {
   font-size: 11px;
@@ -243,4 +260,42 @@ header p{
         grid-column: 7/-1;
         padding: 0;
        }
+}
+
+/* animation */
+@keyframes updown{
+    0%{
+        transform:
+        translateY(-500px);
+    }
+    100%{
+        transform: translateY(0px);
+    }
+}
+@keyframes downup{
+    0%{
+        transform:
+        translateY(500px);
+    }
+    100%{
+        transform: translateY(0px);
+    }
+}
+@keyframes leftright{
+    0%{
+        transform:
+        translatex(-500px);
+    }
+    100%{
+        transform: translatex(0px);
+    }
+}
+@keyframes rightleft{
+    0%{
+        transform:
+        translatex(500px);
+    }
+    100%{
+        transform: translatex(0px);
+    }
 }
